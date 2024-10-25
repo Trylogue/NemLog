@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sleep Researcher - あなたの睡眠を見つけよう！</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- 言語切り替えボタン -->
+    <div class="language-switch">
+        <button onclick="setLanguage('ja')">日本語</button>
+        <button onclick="setLanguage('en')">English</button>
+    </div>
+
     <header>
         <div class="header-content">
             <!-- アイコン画像を追加 -->
             <img src="https://Sleep-Researcher.github.io/Icon.jpg" alt="Sleep Researcher Icon" class="app-icon">
             <div class="header-text">
-                <h1>Sleep Researcher</h1>
-                <p>あなたの睡眠を見つけよう！</p>
+                <h1 data-lang-ja="Sleep Researcher" data-lang-en="Sleep Researcher">Sleep Researcher</h1>
+                <p data-lang-ja="あなたの睡眠を見つけよう！" data-lang-en="Discover Your Sleep!">あなたの睡眠を見つけよう！</p>
             </div>
         </div>
         
@@ -25,26 +32,26 @@
     
     <main>
         <section class="features">
-            <h2>○ 特徴</h2>
+            <h2 data-lang-ja="○ 特徴" data-lang-en="○ Features">○ 特徴</h2>
             <ul>
-                <li>シンプルでわかりやすいUI: 誰でも簡単に使いこなせる、無駄を省いたデザインで、操作も簡単。</li>
-                <li>睡眠データの自動取得: ヘルスケアアプリとの連携により、睡眠データを自動で取得し、手間をかけずに記録が可能。</li>
-                <li>グラフで可視化: 睡眠時間やカフェイン摂取量の変動、ばらつきをグラフで確認。視覚的に睡眠パターンを把握。</li>
-                <li>自己評価機能: 毎日の睡眠の質を自己評価し、それに基づいて最適な就寝・起床時間や睡眠時間を提案。</li>
-                <li>社会的時差ぼけの自動計算: 平日と休日の睡眠時間帯の差を自動で計算し、日々の生活リズムの把握が可能。</li>
-                <li>ダークモード対応: 時間帯によってアプリの背景が変わり、夜間でも目に優しく使いやすいデザイン。</li>
+                <li data-lang-ja="シンプルでわかりやすいUI: 誰でも簡単に使いこなせる、無駄を省いたデザインで、操作も簡単。" data-lang-en="Simple and easy-to-use UI: Intuitive design makes it easy for anyone to use.">シンプルでわかりやすいUI: 誰でも簡単に使いこなせる、無駄を省いたデザインで、操作も簡単。</li>
+                <li data-lang-ja="睡眠データの自動取得: ヘルスケアアプリとの連携により、睡眠データを自動で取得し、手間をかけずに記録が可能。" data-lang-en="Automatically fetch sleep data: Integrates with the Health app to automatically fetch sleep data without hassle.">睡眠データの自動取得: ヘルスケアアプリとの連携により、睡眠データを自動で取得し、手間をかけずに記録が可能。</li>
+                <li data-lang-ja="グラフで可視化: 睡眠時間やカフェイン摂取量の変動、ばらつきをグラフで確認。視覚的に睡眠パターンを把握。" data-lang-en="Visualize sleep patterns: Check variations in sleep time and caffeine intake with easy-to-read graphs.">グラフで可視化: 睡眠時間やカフェイン摂取量の変動、ばらつきをグラフで確認。視覚的に睡眠パターンを把握。</li>
+                <li data-lang-ja="自己評価機能: 毎日の睡眠の質を自己評価し、それに基づいて最適な就寝・起床時間や睡眠時間を提案。" data-lang-en="Self-assessment feature: Evaluate your sleep quality daily and receive recommendations for the best sleep schedule.">自己評価機能: 毎日の睡眠の質を自己評価し、それに基づいて最適な就寝・起床時間や睡眠時間を提案。</li>
+                <li data-lang-ja="社会的時差ぼけの自動計算: 平日と休日の睡眠時間帯の差を自動で計算し、日々の生活リズムの把握が可能。" data-lang-en="Automatically calculate social jetlag: Understand your daily rhythm by automatically calculating the difference between weekday and weekend sleep schedules.">社会的時差ぼけの自動計算: 平日と休日の睡眠時間帯の差を自動で計算し、日々の生活リズムの把握が可能。</li>
+                <li data-lang-ja="ダークモード対応: 時間帯によってアプリの背景が変わり、夜間でも目に優しく使いやすいデザイン。" data-lang-en="Dark mode support: The app changes its background based on time, making it easier on your eyes at night.">ダークモード対応: 時間帯によってアプリの背景が変わり、夜間でも目に優しく使いやすいデザイン。</li>
             </ul>
         </section>
 
         <section class="premium">
-            <h2>○ Premium Plan - より快適な体験を提供するサブスクリプション</h2>
-            <p>広告を非表示にして、より快適な体験を提供。 CSVファイルにプロフィール情報・睡眠データ・カフェインデータ等をエクスポート可能。月額300円で、1ヶ月ごとに更新されます。</p>
+            <h2 data-lang-ja="○ Premium Plan - より快適な体験を提供するサブスクリプション" data-lang-en="○ Premium Plan - A subscription for a better experience">○ Premium Plan - より快適な体験を提供するサブスクリプション</h2>
+            <p data-lang-ja="広告を非表示にして、より快適な体験を提供。 CSVファイルにプロフィール情報・睡眠データ・カフェインデータ等をエクスポート可能。月額300円で、1ヶ月ごとに更新されます。" data-lang-en="Remove ads and enjoy a smoother experience. Export profile information, sleep data, and caffeine data to a CSV file. Available for 300 JPY per month with auto-renewal.">広告を非表示にして、より快適な体験を提供。 CSVファイルにプロフィール情報・睡眠データ・カフェインデータ等をエクスポート可能。月額300円で、1ヶ月ごとに更新されます。</p>
         </section>
     </main>
 
     <footer>
-        <p>質の良い睡眠を手に入れ、毎日を最高のコンディションで過ごしましょう！</p>
-        <p><a href="https://sites.google.com/view/sleep-researcher" target="_blank">プライバシーポリシー</a> | <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">利用規約（EULA）</a></p>
+        <p data-lang-ja="質の良い睡眠を手に入れ、毎日を最高のコンディションで過ごしましょう！" data-lang-en="Achieve better sleep and stay in top condition every day!">質の良い睡眠を手に入れ、毎日を最高のコンディションで過ごしましょう！</p>
+        <p><a href="https://sites.google.com/view/sleep-researcher" target="_blank" data-lang-ja="プライバシーポリシー" data-lang-en="Privacy Policy">プライバシーポリシー</a> | <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" data-lang-ja="利用規約（EULA）" data-lang-en="Terms of Service (EULA)">利用規約（EULA）</a></p>
     </footer>
 </body>
 </html>
