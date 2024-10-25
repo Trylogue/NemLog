@@ -21,7 +21,10 @@ body {
     color: white;
     border: none;
     cursor: pointer;
+    min-width: 80px; /* ボタンの最小幅を設定 */
+    text-align: center;
 }
+
 
 .language-switch button:hover {
     background-color: #87CEEB;
