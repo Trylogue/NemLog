@@ -14,7 +14,28 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.app-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 header h1 {
@@ -27,14 +48,15 @@ header p {
     margin: 0;
 }
 
-/* アイコンのスタイル */
-.app-icon {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    top: 10px;
-    left: 10px;
+/* Apple Storeリンクのスタイル */
+.store-link {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.store-badge {
+    width: 150px;
+    height: auto;
 }
 
 /* メインコンテンツのスタイル */
