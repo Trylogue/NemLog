@@ -15,20 +15,23 @@ body {
 }
 
 .language-switch button {
-    padding: 10px;
+    width: 100px; /* ボタンの幅を統一 */
+    height: 40px; /* ボタンの高さを統一 */
+    padding: 0; /* 内側の余白をリセット */
     margin: 5px;
     background-color: #6b8e23;
     color: white;
     border: none;
     cursor: pointer;
-    min-width: 80px; /* ボタンの最小幅を設定 */
-    text-align: center;
+    display: inline-flex; /* フレックスボックスを使用 */
+    align-items: center; /* 縦方向の中央揃え */
+    justify-content: center; /* 横方向の中央揃え */
 }
-
 
 .language-switch button:hover {
     background-color: #87CEEB;
 }
+
 
 /* ヘッダーのスタイル */
 header {
