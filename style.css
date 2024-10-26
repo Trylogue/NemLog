@@ -73,16 +73,28 @@ header p {
     margin: 0;
 }
 
-/* Apple Storeリンクのスタイル */
-.store-link {
-    margin-top: 20px;
-    display: inline-block;
+/* Apple Storeリンクとソーシャルメディアリンクのスタイル */
+.social-links {
+    display: flex;
+    gap: 10px; /* 各リンクの間隔を調整 */
+    justify-content: center; /* 横中央揃え */
+    align-items: center; /* 縦中央揃え */
+    margin-top: 20px; /* 上部に余白を追加 */
+}
+
+.social-link img,
+.store-link img {
+    width: 40px; /* アイコンの幅を統一 */
+    height: 40px; /* アイコンの高さを統一 */
+    object-fit: cover; /* 画像が縦横比を崩さないように調整 */
+    border-radius: 8px; /* アイコンを少し丸くする */
 }
 
 .store-badge {
     width: 150px;
     height: auto;
 }
+
 
 /* メインコンテンツのスタイル */
 main {
