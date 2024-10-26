@@ -82,18 +82,23 @@ header p {
     margin-top: 20px; /* 上部に余白を追加 */
 }
 
-.social-link img,
-.store-link img {
-    width: 40px; /* アイコンの幅を統一 */
-    height: 40px; /* アイコンの高さを統一 */
+.social-badge {
+    height: 40px; /* ソーシャルアイコンの高さを揃える */
+    width: auto; /* 幅は自動調整 */
+}
+
+.social-link img {
+    height: 40px; /* ソーシャルアイコンの高さを揃える */
+    width: 40px; /* ソーシャルアイコンの幅を揃える */
     object-fit: cover; /* 画像が縦横比を崩さないように調整 */
     border-radius: 8px; /* アイコンを少し丸くする */
 }
 
 .store-badge {
-    width: 150px;
-    height: auto;
+    width: 150px; /* Apple Storeバッジの幅 */
+    height: auto; /* 自動で高さを調整 */
 }
+
 
 
 /* メインコンテンツのスタイル */
