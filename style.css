@@ -15,23 +15,22 @@ body {
 }
 
 .language-switch button {
-    width: 100px; /* ボタンの幅を統一 */
-    height: 40px; /* ボタンの高さを統一 */
-    padding: 0; /* 内側の余白をリセット */
+    width: 100px;
+    height: 40px;
+    padding: 0;
     margin: 5px;
     background-color: #6b8e23;
     color: white;
     border: none;
     cursor: pointer;
-    display: inline-flex; /* フレックスボックスを使用 */
-    align-items: center; /* 縦方向の中央揃え */
-    justify-content: center; /* 横方向の中央揃え */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .language-switch button:hover {
     background-color: #87CEEB;
 }
-
 
 /* ヘッダーのスタイル */
 header {
@@ -76,30 +75,33 @@ header p {
 /* Apple Storeリンクとソーシャルメディアリンクのスタイル */
 .social-links {
     display: flex;
-    gap: 10px; /* 各リンクの間隔を調整 */
+    gap: 10px;
     justify-content: center; /* 横中央揃え */
     align-items: center; /* 縦中央揃え */
-    margin-top: 20px; /* 上部に余白を追加 */
+    margin-top: 20px;
 }
 
-.social-badge {
-    height: 40px; /* ソーシャルアイコンの高さを揃える */
-    width: auto; /* 幅は自動調整 */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* リンクの下線を削除 */
 }
 
 .social-link img {
-    height: 40px; /* ソーシャルアイコンの高さを揃える */
-    width: 40px; /* ソーシャルアイコンの幅を揃える */
-    object-fit: cover; /* 画像が縦横比を崩さないように調整 */
+    height: 40px; /* アイコンの高さ */
+    width: 40px; /* アイコンの幅 */
+    object-fit: contain; /* 画像が縦横比を崩さないように調整 */
     border-radius: 8px; /* アイコンを少し丸くする */
+    display: block;
 }
 
+/* Apple Storeバッジ */
 .store-badge {
-    width: 150px; /* Apple Storeバッジの幅 */
-    height: auto; /* 自動で高さを調整 */
+    width: 150px;
+    height: auto;
+    display: block;
 }
-
-
 
 /* メインコンテンツのスタイル */
 main {
@@ -147,4 +149,38 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* モバイル対応のスタイル */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .app-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .social-link img {
+        height: 32px; /* モバイル向けにアイコンを少し小さく */
+        width: 32px;
+    }
+
+    .store-badge {
+        width: 120px; /* Apple Storeバッジを小さく */
+    }
+
+    main {
+        padding: 10px;
+    }
 }
