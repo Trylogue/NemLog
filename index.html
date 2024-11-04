@@ -61,31 +61,5 @@
         <p data-lang-ja="質の良い睡眠を手に入れ、毎日を最高のコンディションで過ごしましょう！" data-lang-en="Achieve better sleep and stay in top condition every day!">質の良い睡眠を手に入れ、毎日を最高のコンディションで過ごしましょう！</p>
         <p><a href="https://sites.google.com/view/sleep-researcher" target="_blank" data-lang-ja="プライバシーポリシー" data-lang-en="Privacy Policy">プライバシーポリシー</a> | <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" data-lang-ja="利用規約（EULA）" data-lang-en="Terms of Service (EULA)">利用規約（EULA）</a></p>
     </footer>
-
-    <script>
-        function setLanguage(lang) {
-            document.documentElement.lang = lang;
-
-            // 言語ごとにSNSリンクのURLを設定
-            const instagramLink = document.getElementById("instagramLink");
-            const tiktokLink = document.getElementById("tiktokLink");
-
-            if (lang === "ja") {
-                instagramLink.href = "https://www.instagram.com/sleep_researcher_ja";
-                tiktokLink.href = "https://www.tiktok.com/@sleep.researcher.ja";
-            } else if (lang === "en") {
-                instagramLink.href = "https://www.instagram.com/sleep_researcher_eng";
-                tiktokLink.href = "https://www.tiktok.com/@sleep.researcher";
-            }
-
-            // テキストも更新
-            document.querySelectorAll("[data-lang-ja], [data-lang-en]").forEach(element => {
-                element.innerText = element.getAttribute(`data-lang-${lang}`);
-            });
-        }
-
-        // ページ読み込み時にデフォルトの言語を設定
-        setLanguage("ja"); // 日本語をデフォルトに設定
-    </script>
 </body>
 </html>
