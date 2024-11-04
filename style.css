@@ -72,6 +72,7 @@ header p {
     margin: 0;
 }
 
+
 /* ソーシャルメディアリンクのスタイル */
 .social-links {
     display: flex;
@@ -80,14 +81,23 @@ header p {
     justify-content: center; /* 横中央揃え */
     align-items: center; /* 縦中央揃え */
     margin-top: 20px; /* 上部に余白を追加 */
+    flex-wrap: nowrap; /* アイコンが折り返さないように設定 */
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .social-link img {
     height: 40px; /* ソーシャルアイコンの高さを揃える */
     width: 40px; /* ソーシャルアイコンの幅を揃える */
-    object-fit: cover; /* 画像が縦横比を崩さないように調整 */
+    object-fit: contain; /* 画像が縦横比を崩さないように調整 */
     border-radius: 8px; /* アイコンを少し丸くする */
+    display: block;
 }
+
 .social-badge {
     height: 40px; /* ソーシャルアイコンの高さを揃える */
     width: auto; /* 幅は自動調整 */
