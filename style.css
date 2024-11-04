@@ -15,17 +15,17 @@ body {
 }
 
 .language-switch button {
-    width: 100px; /* ボタンの幅を統一 */
-    height: 40px; /* ボタンの高さを統一 */
-    padding: 0; /* 内側の余白をリセット */
+    width: 100px;
+    height: 40px;
+    padding: 0;
     margin: 5px;
     background-color: #6b8e23;
     color: white;
     border: none;
     cursor: pointer;
-    display: inline-flex; /* フレックスボックスを使用 */
-    align-items: center; /* 縦方向の中央揃え */
-    justify-content: center; /* 横方向の中央揃え */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .language-switch button:hover {
@@ -72,42 +72,35 @@ header p {
     margin: 0;
 }
 
-
-/* ソーシャルメディアリンクのスタイル */
+/* Apple Storeリンクとソーシャルメディアリンクのスタイル */
 .social-links {
     display: flex;
-    flex-direction: row; /* 横並びに配置 */
-    gap: 10px; /* 各リンクの間隔を調整 */
-    justify-content: center; /* 横中央揃え */
-    align-items: center; /* 縦中央揃え */
-    margin-top: 20px; /* 上部に余白を追加 */
-    flex-wrap: nowrap; /* アイコンが折り返さないように設定 */
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .social-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none; /* 青い線を防ぐため、リンクの下線を削除 */
 }
 
 .social-link img {
-    height: 40px; /* ソーシャルアイコンの高さを揃える */
-    width: 40px; /* ソーシャルアイコンの幅を揃える */
-    object-fit: contain; /* 画像が縦横比を崩さないように調整 */
-    border-radius: 8px; /* アイコンを少し丸くする */
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 8px;
     display: block;
 }
 
-.social-badge {
-    height: 40px; /* ソーシャルアイコンの高さを揃える */
-    width: auto; /* 幅は自動調整 */
-}
-
-
-
+/* Apple Storeバッジ */
 .store-badge {
-    width: 150px; /* Apple Storeバッジの幅 */
-    height: auto; /* 自動で高さを調整 */
+    width: 150px;
+    height: auto;
+    display: block;
 }
 
 /* メインコンテンツのスタイル */
@@ -158,9 +151,8 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* モバイル対応のスタイル（レスポンシブデザイン） */
+/* モバイル対応のスタイル */
 @media (max-width: 768px) {
-    /* ヘッダー内のアイコンとテキストの配置を縦並びに変更 */
     .header-content {
         flex-direction: column;
         margin-bottom: 10px;
@@ -179,7 +171,6 @@ footer a:hover {
         font-size: 1em;
     }
 
-    /* ソーシャルリンクのアイコンサイズを調整 */
     .social-link img {
         height: 32px;
         width: 32px;
@@ -189,7 +180,6 @@ footer a:hover {
         width: 120px;
     }
 
-    /* メインコンテンツのパディングを調整 */
     main {
         padding: 10px;
     }
