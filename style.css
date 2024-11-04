@@ -88,6 +88,10 @@ header p {
     object-fit: cover; /* 画像が縦横比を崩さないように調整 */
     border-radius: 8px; /* アイコンを少し丸くする */
 }
+.social-badge {
+    height: 40px; /* ソーシャルアイコンの高さを揃える */
+    width: auto; /* 幅は自動調整 */
+}
 
 
 
