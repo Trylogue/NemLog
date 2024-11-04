@@ -32,7 +32,6 @@ body {
     background-color: #87CEEB;
 }
 
-
 /* ヘッダーのスタイル */
 header {
     background-color: #6b8e23;
@@ -99,8 +98,6 @@ header p {
     height: auto; /* 自動で高さを調整 */
 }
 
-
-
 /* メインコンテンツのスタイル */
 main {
     padding: 20px;
@@ -147,4 +144,41 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* モバイル対応のスタイル（レスポンシブデザイン） */
+@media (max-width: 768px) {
+    /* ヘッダー内のアイコンとテキストの配置を縦並びに変更 */
+    .header-content {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .app-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    /* ソーシャルリンクのアイコンサイズを調整 */
+    .social-link img {
+        height: 32px;
+        width: 32px;
+    }
+
+    .store-badge {
+        width: 120px;
+    }
+
+    /* メインコンテンツのパディングを調整 */
+    main {
+        padding: 10px;
+    }
 }
