@@ -98,9 +98,9 @@ header p {
 
 /* YouTubeアイコンのスタイル */
 #youtubeLink img {
-    width: 80px; /* 横長アイコンの幅 */
+    width: 150px; /* 横長アイコンの幅 */
     height: auto; /* 高さを自動調整 */
-    object-fit: contain; /* アイコンの縦横比を保持 */
+    object-fit: cover; /* アイコンの縦横比を保持 */
 }
 
 /* Apple Storeバッジ */
@@ -188,7 +188,7 @@ footer a:hover {
     }
 
     #youtubeLink img {
-        width: 60px; /* モバイル向けにYouTubeアイコンを小さく */
+        width: 120px; /* モバイル向けにYouTubeアイコンを小さく */
         height: auto;
     }
 
