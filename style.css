@@ -96,11 +96,12 @@ header p {
     display: block;
 }
 
-/* YouTubeアイコンのスタイル */
-#youtubeLink img {
+/* Apple StoreバッジとYouTubeアイコンの共通スタイル */
+.store-badge, #youtubeLink img {
     width: 150px; /* 横長アイコンの幅 */
-    height: auto; /* 高さを自動調整 */
-    object-fit: contain; /* 縦横比を保持 */
+    height: 40px; /* 高さを他のアイコンと揃える */
+    object-fit: contain; /* アイコンが枠に収まるように調整 */
+    display: block;
 }
 
 /* Apple Storeバッジ */
@@ -187,9 +188,9 @@ footer a:hover {
         width: 120px; /* Apple Storeバッジを小さく */
     }
 
-    #youtubeLink img {
-        width: 120px; /* Apple Storeバッジと同じ幅に設定 */
-        height: auto;
+    .store-badge, #youtubeLink img {
+        width: 120px; /* Apple StoreバッジとYouTubeアイコンをモバイル用に調整 */
+        height: 32px; /* 他のアイコンと縦を揃える */
     }
 
     main {
