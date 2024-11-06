@@ -49,6 +49,12 @@ header {
     margin-bottom: 20px;
 }
 
+.centered-text {
+    text-align: center;
+    margin: 20px 0;
+}
+
+
 .app-icon {
     width: 100px;
     height: 100px;
