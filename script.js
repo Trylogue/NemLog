@@ -13,7 +13,7 @@ function setLanguage(language) {
         instagramLink.href = "https://www.instagram.com/sleep.researcher.ja";
         tiktokLink.href = "https://www.tiktok.com/@sleep.researcher.ja";
     } else if (language === "en") {
-        instagramLink.href = "https://www.instagram.com/sleep.researcher.eng";
+        instagramLink.href = "https://www.instagram.com/sleep.researcher.en";
         tiktokLink.href = "https://www.tiktok.com/@sleep.researcher";
     }
 
