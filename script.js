@@ -10,10 +10,10 @@ function setLanguage(language) {
     const tiktokLink = document.getElementById("tiktokLink");
 
     if (language === "ja") {
-        instagramLink.href = "https://www.instagram.com/sleep_researcher_ja";
+        instagramLink.href = "https://www.instagram.com/sleep.researcher.ja";
         tiktokLink.href = "https://www.tiktok.com/@sleep.researcher.ja";
     } else if (language === "en") {
-        instagramLink.href = "https://www.instagram.com/sleep_researcher_eng";
+        instagramLink.href = "https://www.instagram.com/sleep.researcher.eng";
         tiktokLink.href = "https://www.tiktok.com/@sleep.researcher";
     }
 
