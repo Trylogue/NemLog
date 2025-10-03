@@ -1,194 +1,329 @@
-/* 全体のスタイル設定 */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+/* =========================
+   Cromo Dark Navy UI — v1
+   ========================= */
+
+/* カラートークン */
+:root {
+    --bg: #0b1220;                /* 画面全体の濃紺 */
+    --bg-soft: #0f172a;           /* セクション背景（やや明るめ） */
+    --surface: rgba(18, 27, 48, 0.6); /* カード/パネル（ガラス感） */
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #e6edf3;              /* メイン文字色 */
+    --muted: #97a0af;             /* 補助文字色 */
+    --accent: #7aa2ff;            /* アクセント（青） */
+    --accent-2: #64ffda;          /* サブアクセント（シアン） */
+    --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --transition: 180ms ease;
 }
 
-/* 言語切り替えボタンのスタイル */
+/* リセット & 全体 */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", "Meiryo", Arial, sans-serif;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(122,162,255,0.15), transparent 60%),
+      radial-gradient(800px 400px at -10% 20%, rgba(100,255,218,0.10), transparent 60%),
+      var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    letter-spacing: 0.2px;
+}
+
+/* フォーカス可視化 */
+:where(a, button):focus-visible {
+    outline: 2px solid var(--accent-2);
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+/* 言語切り替え */
 .language-switch {
     text-align: center;
-    margin-top: 10px;
+    padding: 12px 0 0;
 }
 
 .language-switch button {
-    width: 100px;
+    min-width: 108px;
     height: 40px;
-    padding: 0;
-    margin: 5px;
-    background-color: #6b8e23;
-    color: white;
-    border: none;
+    padding: 0 14px;
+    margin: 6px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: linear-gradient(180deg, rgba(20,32,56,0.9), rgba(14,24,45,0.9));
+    color: var(--text);
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset, var(--shadow);
+    transition: transform var(--transition), background var(--transition), border-color var(--transition);
 }
 
 .language-switch button:hover {
-    background-color: #87CEEB;
+    transform: translateY(-1px);
+    border-color: rgba(122,162,255,0.5);
+    background: linear-gradient(180deg, rgba(26,44,78,0.95), rgba(16,30,58,0.95));
 }
 
-/* ヘッダーのスタイル */
+/* ヘッダー */
 header {
-    background-color: #6b8e23;
-    color: white;
-    padding: 20px;
+    background: linear-gradient(135deg, #0d1b2a 0%, #0b1220 40%, #0f1a2f 100%);
+    color: var(--text);
+    padding: 36px 20px 28px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    /* ほんのり薄いグリッドを重ねて未来感を演出 */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(transparent 95%, rgba(122,162,255,0.08) 95%),
+      linear-gradient(90deg, transparent 95%, rgba(122,162,255,0.08) 95%);
+    background-size: 28px 28px;
+    opacity: 0.35;
+    pointer-events: none;
 }
 
 .header-content {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    gap: 18px;
+    margin-bottom: 12px;
+    z-index: 1;
 }
-
-.centered-text {
-    text-align: center;
-    margin: 20px 0;
-}
-
 
 .app-icon {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 20px;
+    width: 92px;
+    height: 92px;
+    border-radius: 22%;
+    object-fit: cover;
+    box-shadow: 0 0 0 1px var(--border), 0 12px 30px rgba(0,0,0,0.45);
+    background: #0c1528;
 }
 
 .header-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: left;
 }
 
 header h1 {
-    font-size: 2.5em;
-    margin: 0;
+    font-size: clamp(26px, 4.2vw, 40px);
+    line-height: 1.2;
+    margin: 0 0 4px;
+    letter-spacing: 0.6px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 header p {
-    font-size: 1.2em;
+    font-size: clamp(13px, 2.4vw, 16px);
     margin: 0;
+    color: var(--muted);
 }
 
-/* Apple Storeリンクとソーシャルメディアリンクのスタイル */
+/* Apple Store / SNS */
 .social-links {
     display: flex;
-    gap: 10px;
-    justify-content: center; /* 横中央揃え */
-    align-items: center; /* 縦中央揃え */
-    margin-top: 20px;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14px;
+    z-index: 1;
 }
 
 .social-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none; /* リンクの下線を削除 */
+    text-decoration: none;
+    transform: translateZ(0);
 }
 
-.social-link img {
-    height: 40px; /* アイコンの高さ */
-    width: 40px; /* アイコンの幅 */
-    object-fit: contain; /* 画像が縦横比を崩さないように調整 */
-    border-radius: 8px; /* アイコンを少し丸くする */
-    display: block;
+.social-link img,
+.store-badge,
+#youtubeLink img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.45));
+    transition: transform var(--transition), filter var(--transition), opacity var(--transition);
 }
 
-/* Apple StoreバッジとYouTubeアイコンの共通スタイル */
-.store-badge, #youtubeLink img {
-    width: 150px; /* Apple Storeバッジと同じ幅 */
-    height: 40px; /* 他のアイコンと揃える高さ */
-    object-fit: contain; /* アイコンが枠に収まるように調整 */
-    display: block;
+.social-link:hover img,
+.social-link:hover .store-badge,
+.social-link:hover #youtubeLink img {
+    transform: translateY(-2px) scale(1.02);
+    filter: drop-shadow(0 12px 26px rgba(0,0,0,0.55));
 }
 
-/* メインコンテンツのスタイル */
+/* メイン */
 main {
-    padding: 20px;
-    max-width: 800px;
+    padding: 28px 20px 40px;
+    max-width: 920px;
     margin: 0 auto;
 }
 
+/* セクション見出し */
 h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #6b8e23;
-    padding-bottom: 10px;
+    color: var(--text);
+    font-size: clamp(18px, 3.2vw, 22px);
+    font-weight: 700;
+    margin: 24px 0 14px;
+    position: relative;
+    padding-bottom: 12px;
 }
 
-.features ul {
-    list-style-type: square;
-    padding-left: 20px;
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 72px;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--accent), transparent 70%);
 }
 
-.features li {
-    margin-bottom: 10px;
+/* リスト（特徴/おすすめ） */
+.features ul,
+.recommend ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
 }
 
-/* プレミアムプランセクション */
+.features li,
+.recommend li {
+    position: relative;
+    padding: 12px 14px 12px 34px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius);
+    color: var(--text);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.features li::before,
+.recommend li::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 16px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--accent-2), var(--accent));
+    box-shadow: 0 0 0 2px rgba(100,255,218,0.15);
+}
+
+.features li:hover,
+.recommend li:hover {
+    transform: translateY(-1px);
+    border-color: rgba(122,162,255,0.25);
+    background: rgba(18, 27, 48, 0.72);
+}
+
+/* セクションカード（Premiumなど） */
 .premium {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
+    background: var(--surface);
+    backdrop-filter: blur(10px);
+    padding: 22px;
+    border-radius: var(--radius);
+    margin-top: 24px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
 }
 
-/* フッターのスタイル */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 40px;
+.premium p {
+    margin: 8px 0 0;
+    color: var(--muted);
 }
+
+/* フッター */
+footer {
+    background: linear-gradient(180deg, #0c1528, #0b1220);
+    color: var(--muted);
+    padding: 24px 14px 28px;
+    text-align: center;
+    margin-top: 46px;
+    border-top: 1px solid var(--border);
+}
+
+footer p { margin: 6px 0; }
 
 footer a {
-    color: #6b8e23;
+    color: var(--accent-2);
     text-decoration: none;
+    transition: opacity var(--transition), text-decoration-color var(--transition);
+    text-underline-offset: 3px;
 }
 
 footer a:hover {
+    opacity: 0.9;
     text-decoration: underline;
 }
 
-/* モバイル対応のスタイル */
+/* モバイル最適化 */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
-        margin-bottom: 10px;
+        gap: 12px;
+        margin-bottom: 6px;
+        text-align: center;
     }
 
     .app-icon {
-        margin-right: 0;
-        margin-bottom: 10px;
+        width: 84px;
+        height: 84px;
+        border-radius: 20%;
+        margin: 0;
     }
 
-    header h1 {
-        font-size: 2em;
+    .header-text { text-align: center; }
+
+    .social-link img,
+    .store-badge,
+    #youtubeLink img {
+        height: 34px;
     }
 
-    header p {
-        font-size: 1em;
+    main { padding: 18px 14px 28px; }
+
+    .features li,
+    .recommend li {
+        padding: 12px 12px 12px 32px;
+        border-radius: 14px;
     }
 
-    .social-link img {
-        height: 32px; /* モバイル向けに他のアイコンを少し小さく */
-        width: 32px;
-    }
+    h2 { margin-top: 18px; }
+}
 
-    .store-badge, #youtubeLink img {
-        width: 120px; /* Apple StoreバッジとYouTubeアイコンをモバイル用に調整 */
-        height: 32px; /* 他のアイコンと縦を揃える */
-    }
-
-    main {
-        padding: 10px;
-    }
+/* さらに小さい端末 */
+@media (max-width: 380px) {
+    .language-switch button { min-width: 96px; height: 38px; }
+    .social-link img,
+    .store-badge,
+    #youtubeLink img { height: 30px; }
 }
